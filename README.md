@@ -46,3 +46,24 @@ This is a basic demonstration using synthetic CSV data. Alerts are indicators fo
 
 ## Disclaimer
 For educational and authorized defensive security testing only. No real user credentials or production logs are included.
+
+## Automated Testing
+
+The project includes unit tests using Python's built-in `unittest` framework.
+
+### Test Cases
+1. **Repeated failed logins:** Verifies that repeated failures trigger user and IP alerts.
+2. **Successful logins:** Verifies that successful logins do not trigger failed-login alerts.
+3. **Below threshold:** Verifies that two failed attempts do not trigger an alert when the threshold is three.
+
+### Run Tests
+
+```bash
+py -m unittest test_identity_detector.py -v
+```
+
+### Test Results
+All three unit tests passed in the local test environment.
+
+## Project Status
+This project is an educational prototype that analyzes synthetic CSV login logs. It does not connect to a live cloud identity provider or automatically block accounts.
